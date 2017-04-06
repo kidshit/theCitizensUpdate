@@ -1,0 +1,421 @@
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	/*border: 1px solid red;*/ /* Troubleshoot Outlines */
+	text-decoration: none;
+}
+body {
+	background-color: rgb(240, 240, 240);
+}
+#headerContainer {
+	z-index: 11111111;
+	background-color: rgb(255, 210, 56); /* Header-Background Yellow */
+	position: fixed;
+	top: 0;
+	width: 100%;
+	min-width: 500px;
+	height: 14vh; 
+	min-height: 75px;
+}
+#headlineScrolling {
+	position: absolute;
+	top: 2.4vh;
+	left: 0vw;
+	width: 90vw;
+	overflow: hidden;
+	white-space: nowrap;
+	animation: marquee 350s linear infinite; /* IMPROVE, TOO STUTTERY USE THAT WEBKIT THING PROBABLY */
+	font: 32px 'Roboto', sans-serif;
+}
+@keyframes marquee { 
+    0%   { text-indent: 3em }
+    100% { text-indent: -900em }
+}
+#headerContainer li {
+	text-align: center;
+	display: inline-block;
+	font: 14px 'Roboto', sans-serif;
+	color: white;
+	width: 16.666666667vw;
+	height: 4.8vh;
+	min-height: 25px;
+	line-height: 5vh;
+}
+#headerContainer ul {
+	white-space: nowrap;
+	position: absolute;
+	bottom: -0.4vh;
+	left: 0;
+	width: 100vw;
+	min-width: 500px
+}
+#footerContainer {
+	position: fixed;
+	bottom: 0;
+	height: 2vw;
+	width: 100vw;
+	vertical-align: bottom;
+}
+#footerContainer li {
+	vertical-align: middle;
+	text-align: center;
+	display: inline-block;
+	font: 14px 'Roboto', sans-serif;
+	color: white;
+	width: 16.666666667vw;
+	height: 4.8vh;
+	line-height: 5vh;
+}
+#footerContainer ul {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	white-space: nowrap;
+	width: 100%;
+}
+#dropDownNav {
+	position: fixed;
+	top: 1.4vh;
+	left: 87vw;
+}
+#mobileDropContainer { /* WHY the f*** is this the ONLY TIME I NEED TO CLOSE THE SPACE BETWEEN THE PARENT DIV AND ITS CHILD TO BE ABLE TO SLECT IT???????*/
+	z-index: 11111112;
+	display: none;
+	background-image: url(http://web-design-1.cu.cc/justin/socialSite/icons/dropMenuBackground.svg);
+	background-color: ;
+	background-size: cover;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 500px;
+	padding: 2.4vw 2vw 0 0;
+}
+nav ul {
+	position: relative;
+	font: 30px 'Roboto', sans-serif;
+	list-style-type: none;
+	text-align: right;
+	float: right;
+}
+nav li {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: rgb(240, 240, 240);
+	border: 3px solid rgb(88, 89, 91);
+	display: ;
+	margin-bottom: 8vw;
+	padding: 0vw 2vw 0 2vw;
+}
+#closer {
+	position: absolute;
+	top: 60vw;
+	left: 40vw;
+}
+nav input {
+	font: 17.2px 'Roboto', sans-serif;
+	vertical-align: middle;
+	width: 57vw;
+}
+#filterIcon {
+	z-index: 9999999;
+	vertical-align: middle;
+	margin-left: 1.4vw;
+}
+#searchIcon {
+	z-index: 10000000;
+	vertical-align: middle;
+	margin-left: 1vw;
+}
+#editIcon {
+	z-index: 10000001;
+	vertical-align: middle;
+	margin-left: 3vw;
+}
+#footerContainer #searchIconMobile {
+	height: 3.8vh;
+	margin-top: 0.6vh
+}
+#footerContainer #calendarIcon {
+	height: 3.8vh;
+	margin-top: 0.6vh
+}
+#footerContainer #editIcon {
+	height: 3.4vh;
+}
+#footerContainer li:nth-of-type(4) {
+	padding-top: 0.6vh;
+	font: 22px 'Roboto', sans-serif;
+	font-weight: 600;
+	color: black;
+}
+#inputPopup {
+	display: none;
+	padding: 1.5vh 0 0 9.2vw;
+	position: fixed;
+	bottom: 4.8vh;
+	left: 0;
+	height: 8vh;
+	width: 100vw;
+	background-color: rgb(0, 109, 176);
+}
+#inputPopup input {
+	height: 5vh;
+	width: 70vw;
+}
+#inputPopup #filterIcon {
+	margin-left: 2vh;
+}
+nav li:nth-child(1) {
+	position: absolute;
+	right:0vw;
+	top: 0vw;
+	width: 80vw;
+	padding-bottom: 1vw;
+}
+nav li:nth-child(2) {
+	position: absolute;
+	right:0vw;
+	top: 16vw;
+	width: 64vw;
+}
+nav li:nth-child(3) {
+	position: absolute;
+	top: 32vw;
+	right:0vw;
+	width: 48vw;
+}
+nav li:nth-child(4) {
+	position: absolute;
+	top: 48vw;
+	right: 0vw;
+	width: 36vw;
+	font-size: 28px;
+}
+nav li:nth-child(5) {
+	position: absolute;
+	top: 64vw;
+	right: 0vw;
+	width: 16vw;
+}
+#feed { /* CENTERS AND DEFINES WIDTH */
+	width:97vw;
+	margin: 15vh 1.5vw 0 1.5vw;
+}
+#feed li {
+	vertical-align: middle;
+	text-align: center;
+	display: inline-block;
+	font: 14px 'Roboto', sans-serif;
+	color: white;
+	width: 16.666666667vw;
+	height: 4.8vh;
+	max-height: 50px;
+	line-height: 5vh;
+}
+/*#headerContainer li:hover {
+	background-color: rgb(200, 200, 200) !important;
+}*/
+#desktopSidebar li:nth-of-type(2):hover, #desktopSidebar li:nth-of-type(3):hover, #desktopSidebar li:nth-of-type(4):hover, #desktopSidebar li:nth-of-type(5):hover {
+	background-color: rgb(200, 200, 200) !important;
+}
+#feed ul {
+	width: 100vw;
+	white-space: nowrap;
+	margin-left: -1.5vw;
+}
+#politics .timeWrap .timeBox {
+	background-color: white;
+	border: 2px solid rgb(102, 42, 145);
+}
+#tech .timeWrap .timeBox {
+	background-color: white;
+	border: 2px solid rgb(0, 109, 176);
+}
+#industry .timeWrap .timeBox {
+	background-color: white;
+	border: 2px solid rgb(0, 151, 74);
+}
+#foreign .timeWrap .timeBox {
+	background-color: white;
+	border: 2px solid rgb(244, 123, 32);
+}
+#culture .timeWrap .timeBox {
+	background-color: white;
+	border: 2px solid rgb(237, 28, 36);
+}
+.patches {
+	display: inline-block;
+	text-align: left;
+	margin: 0 0 2vh 0;
+}
+span { 
+	display: none;
+	width: 90vw;
+	margin: 0 auto 1vh auto;
+}
+span p {
+	font: 13px 'Roboto', sans-serif;
+	color:black;
+	text-align: justify;
+	margin-top: -1vh;
+}
+.timeWrap {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 0.4vw;
+}
+.timeBox {
+	/*background-color: white;
+	border: 2px solid rgb(244, 123, 32);*/
+	border-radius: 4px;
+	width: 9.4vw;
+	padding: 0.10em 0.1em 0 0;
+}
+h1 {
+	font: bold 26px 'Roboto', sans-serif;
+	color: white;
+}
+h2 {
+	font: 11px 'Roboto', sans-serif;
+	color:black;
+	text-align:right;
+}
+h3 {
+	display: inline-block;
+	font: 16px 'Patua One', sans-serif;
+	font-weight: 500;
+	vertical-align: middle;
+	width: 84vw;
+	line-height: 1em;
+	padding-bottom: 1px;
+}
+#desktopSidebar {
+	display: none;
+	position: fixed;
+	list-style-type: none;
+	top: 9.6vh;
+	right: 0;
+}
+#desktopSidebar > li{
+	height: 14.8vh;
+	width: 52px;
+	font: 55px 'Roboto', sans-serif;
+	font-weight: 600;
+	min-height: 70px;
+}
+#desktopSidebar li:nth-of-type(3){
+	text-align: center;
+	padding-top: 5px;
+}
+
+#searchIconDesk {
+	display: none;
+}
+@media all and (min-device-width: 1176px){
+	@keyframes marquee { 
+    0%   { text-indent: 3em }
+    100% { text-indent: -1200em }
+}
+	#headlineScrolling {
+		width: 100vw;
+		top: -5px;
+	}
+	#headerContainer li {
+		font: 3.8vh 'Roboto', sans-serif;
+		min-width: 90px;
+		line-height: 4.4vh;
+	}
+	#dropDownNav {
+		display: none;
+	}
+	#feed { /* CENTERS AND DEFINES WIDTH */
+		width:98vw;
+		margin: 15vh 1vw 0 1vw;
+	}
+	#feed ul {
+		margin-left: -1vw;
+	}
+	#feed li {
+		min-width: 90px;
+	}
+	#footerContainer {
+		display: none;
+	}
+	.patches {
+		min-width: 1000px;
+	}
+	.timeBox {
+		width: 42px;
+	}
+	#desktopSidebar {
+		display: block;
+	}
+	#searchIcon, #editIcon {
+		margin-left: 12px;
+		vertical-align: none;
+	}
+	#editIcon {
+		height: 32px;
+	}
+	#calendarIcon {
+		margin-left: 10px;
+		height: 32px;
+	}
+	#searchIconDesk {
+		display: block;
+		z-index: 11111111;
+		position: fixed;
+		top: 72vh;
+		right: 10px;
+		height: 32px;
+	}
+	span {
+		margin: 0 0 1vh 0;
+		width: 94%;
+	}
+	h1 {
+		font: bold 8vh 'Roboto', sans-serif;
+	}
+	h2 {
+		font: 14px 'Roboto', sans-serif;
+	}
+	h3 {
+		font: 20px 'Patua One', sans-serif;
+	}
+	span p {
+		font: 15px 'Roboto', sans-serif;
+	}
+}
+@media all and (max-height: 600px) and (min-device-width: 1176px) {
+	#headlineScrolling {
+		top: -2px;
+	}
+	h1 {
+		font: bold 42px 'Roboto', sans-serif;
+	}
+	#headerContainer li {
+		font: 22px 'Roboto', sans-serif;
+		line-height: 24px;
+	}
+}
+@media all and (max-height: 525px) and (min-device-width: 1176px) {
+	#feed {
+	margin: 80px 1vw 0 1vw;
+	}
+}
+@media all and (max-height: 466px) and (min-device-width: 1176px) {
+	#searchIconDesk {
+		top: 335px;
+	}
+}
+@media all and (max-width: 750px) and (min-device-width: 1176px) {
+	#desktopSidebar {
+		display: none
+	}
+	#searchIconDesk {
+		display: none;
+	}
+}

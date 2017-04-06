@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta property="og:title" content="The Citizens' Update" />
+    <meta property="og:description" content="Democratize the news, wrest control from the corporate news conglomerates and media-manipulating governments! In the age of the Internet, the people are the source of news. We no longer have to rely and antiquated papers and news channels. Take control of your news!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://web-design-1.cu.cc/justin/socialSite/index.html" />
+    <meta property="og:image" content="http://www.allencc.edu/images/stories/allen/yearbook/newspaper.jpg" />
+    <title>The Citizens' Update</title>
+    <script src="js/p5.js" type="text/javascript"></script>
+    <script src="js/p5.dom.js" type="text/javascript"></script>
+    <script src="js/p5.sound.js" type="text/javascript"></script>
+    <script src="js/index.js" type="text/javascript" async></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Patua+One|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+  </head>
+  <body>
+
+<!-- Header Container -->
+  <div id="headerContainer">
+    
+    <!-- Filter bar, below headline and Dropdown -->
+ 
+    <ul>
+         <li style=" background-color: rgb(102, 42, 145);">Politics</li><!--inlineattacher
+      --><li style=" background-color: rgb(0, 109, 176);">Tech</li><!--inlineattacher
+      --><li style=" background-color: rgb(0, 151, 74);">Industry</li><!--inlineattacher
+      --><li style=" background-color: rgb(244, 123, 32);">Foreign</li><!--inlineattacher
+      --><li style=" background-color: rgb(237, 28, 36);">Culture</li><!--inlineattacher
+      --><li style=" background-color: rgb(246, 236, 19);">All</li>
+    </ul>
+  
+    <!-- Scrolling Headline/Breaking News -->
+
+    <div id="headlineScrolling">
+      <h1> Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia | Trump Impeachment inevitable over concrete evidence of collusion with Russia </h1>
+    </div>
+  
+    <!-- Dropdown Icon to the right of headline -->
+
+    <div id="dropDownNav">
+    <img src="icons/dropIcon.svg" style="width: 7vh;">
+    </div>
+
+   </div>
+   
+<!-- Dropdown Menu from top right on Mobile -->
+   
+   <nav id='mobileDropContainer'>
+   <img id='closer' src='icons/menuCloser.svg'>
+   <ul>
+     <li><input type='text' placeholder=' Filter search -->'><img id='filterIcon' src='icons/filterIcon.svg'><img id='searchIcon' src='icons/searchIcon.svg'></li>
+     <li>Apply to edit<img id='editIcon' src='icons/editIcon.svg'></li>
+     <li> About Us</li>
+     <li> Calendar</li>
+     <li>dB</li>
+   </ul>
+
+   </nav>
+
+<!-- Footer Container -->  
+
+  <div id="footerContainer">
+      <div id='inputPopup'><input type='text' placeholder='Filter search --->'><img id='filterIcon' src='icons/filterIcon.svg'></div>
+      <ul>
+         <li style=" background-color: rgb(102, 42, 145);"></li><!--inlineattacher
+      --><li style=" background-color: rgb(0, 109, 176);"><img id='searchIconMobile' src='icons/searchIcon.svg'></li><!--inlineattacher
+      --><li style=" background-color: rgb(0, 151, 74);"><img id='calendarIcon' src='icons/calendarIcon.svg'></li><!--inlineattacher
+      --><li style=" background-color: rgb(244, 123, 32);">?</li><!--inlineattacher
+      --><li style=" background-color: rgb(237, 28, 36);"><img id='editIcon' src='icons/editIcon.svg'></li><!--inlineattacher
+      --><li style=" background-color: rgb(246, 236, 19);"></li>
+      </ul>
+   
+   </div>
+
+    <ul id='desktopSidebar'>
+         <li style=" background-color: rgb(246, 236, 19);"></li><!--inlineattacher
+      --><li style=" background-color: rgb(237, 28, 36);"><img id='editIcon' src='icons/editIcon.svg'></li><!--inlineattacher
+      --><li style=" background-color: rgb(244, 123, 32);">?</li><!--inlineattacher
+      --><li style=" background-color: rgb(0, 151, 74);"><img id='calendarIcon' src='icons/calendarIcon.svg'></li><!--inlineattacher
+      --><li style=" background-color: rgb(0, 109, 176);"></li><!--inlineattacher
+      --><li style=" background-color: rgb(102, 42, 145);"></li>
+    </ul>
+    <img id='searchIconDesk' src='icons/searchIcon.svg'>
+
+    <!-- Feed Wrapper -->
+    <div id="feed">
+
+      <div class="patches" id='politics'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+        <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+      <div class="patches" id='politics'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+        <span>
+        <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+        </span>
+
+      <div class="patches" id='tech'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+       <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+      <div class="patches" id='foreign'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+      <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+      <div class="patches" id='politics'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+        <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>      
+      </span>
+
+      <div class="patches" id='culture'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+        <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+      <div class="patches" id='industry'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+        <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+      <div class="patches" id='tech'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+        <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+            <div class="patches" id='culture'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+       <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+            <div class="patches" id='foreign'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+       <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+            <div class="patches" id='tech'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+       <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+            <div class="patches" id='tech'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+       <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+            <div class="patches" id='politics'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+       <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+      <ul>
+         <li style=" background-color: rgb(102, 42, 145);">&#9650; 3/04/17^&#9650;</li><!--inlineattacher
+      --><li style=" background-color: rgb(0, 109, 176);"></li><!--inlineattacher
+      --><li style=" background-color: rgb(0, 151, 74);"></li><!--inlineattacher
+      --><li style=" background-color: rgb(244, 123, 32);"></li><!--inlineattacher
+      --><li style=" background-color: rgb(237, 28, 36);">&#9660; 3/03/17 &#9660;</li><!--inlineattacher
+      --><li style=" background-color: rgb(246, 236, 19);"></li>
+      </ul>
+
+      <div class="patches" id='industry'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+       <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+      <div class="patches" id='culture'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+       <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+      <div class="patches" id='industry'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+       <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+      <div class="patches" id='foreign'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+       <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+      <div class="patches" id='politics'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+       <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+      <div class="patches" id='industry'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+       <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+      <div class="patches" id='industry'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+       <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+      <div class="patches" id='industry'>
+        <div class="timeWrap"><div class="timeBox"><h2></h2></div></div>
+        <h3></h3>
+      </div>
+
+      <span>
+       <p>Pressure continues to mount on former national security adviser Michael Flynn to testify before Congress about possible connections between the Trump campaign and Russia even without protection from prosecution, CBS News correspondent Errol Barnett reports. 
+        Flynn was fired from the White House in February for lying to Vice President Mike Pence about his contacts with the Russian ambassador. 
+        <br><br>
+        Flynn’s lawyer released a statement Thursday saying his client “has a story to tell,” but wants protection in order to tell congressional intelligence committees and the FBI what he knows. And that has all of Washington wondering what exactly that could be.
+        Even some Republicans like Rep. Jason Chaffetz of Utah, the chairman of the House Oversight Committee, are puzzled by Flynn’s request for protection from prosecution.
+        <br><br>
+        “Well, it doesn’t look good,” Chaffetz told Fox News on Friday. “I don’t know -- the witch hunt, I don’t buy that either. We’re just trying to get to the facts.”
+        <br><br>
+        Rep. Adam Schiff, the top Democrat on the House Intelligence Committee, called Flynn’s immunity request “a grave and momentous step.”
+        Schiff went to the White House Friday to review the intelligence previously provided to Republican committee chairman Rep. Devin Nunes, who is facing questions about possible coordination with White House officials. Schiff called for the documents to be shared with the full intelligence committees.
+        <br><br>
+        On Friday, Mr. Trump refused to answer questions at the White House when CBS News chief White House correspondent Major Garrett asked about Flynn’s request. But Mr. Trump earlier encouraged Flynn to ask for immunity, tweeting that the ongoing congressional inquiries are nothing short of a “witch hunt.”
+        <br><br>
+        Press secretary Sean Spicer said Mr. Trump is supportive of Flynn testifying, but dodged questions about whether the president is trying to influence the investigations.</p>
+      </span>
+
+
+    </div>
+  
+  </body>
+</html>
